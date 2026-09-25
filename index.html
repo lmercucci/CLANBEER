@@ -1,0 +1,71 @@
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cervejaria Clan Beer | Home</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+    </head>
+    <body>
+        <header>
+            <a href="index.html" class="logo">🍻 Clan Beer</a>
+            <nav>
+                <a href="index.html" class="active">Home</a>
+                <a href="cervejas.html">Nossas Cervejas</a>
+                <a href="contato.html">Contato</a>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <h1>Cerveja Artesanal de Verdade</h1>
+            <p>Produzida com maltes selecionados e a paixão de quem entende de alta fermentação.</p>
+            <a href="cervejas.html" class="btn">Ver Catálogo</a>
+        </section>
+
+        <section class="sobre">
+            <h2>Nossa Tradição</h2>
+            <p>Desde o início, nosso foco é trazer a melhor experiência em lúpulo e malte para o seu copo. Combinamos tecnologia de ponta com receitas tradicionais para criar rótulos inesquecíveis.</p>
+        </section>
+
+        <footer>
+            <p>© 2026 Cervejaria Clan Beer. Beba com moderação.</p>
+        </footer>
+        <a href="https://wa.me/11992090275" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+            <span>💬</span>
+        </a>
+        <!-- Estrutura da Barreira de Idade -->
+        <div id="modalIdade" class="modal-idade">
+            <div class="modal-conteudo">
+                <h2>🍻 Verificação de Idade</h2>
+                <p>Este site contém conteúdo de bebidas alcoólicas e é destinado exclusivamente a maiores de 18 anos. Você tem mais de 18 anos?</p>
+                <div class="botoes-idade">
+                    <button class="btn-sim" onclick="verificarIdade(true)">Sim</button>
+                    <button class="btn-nao" onclick="verificarIdade(false)">Não</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Script de Funcionamento da Barreira -->
+        <script>
+            // Executa assim que a página carrega
+            document.addEventListener("DOMContentLoaded", function() {
+                // Verifica se o usuário já aceitou o termo anteriormente
+                if (localStorage.getItem("maiorDeIdade") === "true") {
+                    document.getElementById("modalIdade").style.display = "none";
+                }
+            });
+
+            function verificarIdade(resposta) {
+                if (resposta) {
+                    // Salva a resposta no navegador e esconde o pop-up
+                    localStorage.setItem("maiorDeIdade", "true");
+                    document.getElementById("modalIdade").style.display = "none";
+                } else {
+                    // Redireciona o menor de idade para fora do site
+                    window.location.href = "https://google.com";
+                }
+            }
+        </script>
+    </body>
+    </html>

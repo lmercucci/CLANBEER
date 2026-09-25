@@ -1,0 +1,366 @@
+    /* ==========================================
+       PALETA DE CORES E VARIÁVEIS GLOBAIS
+       ========================================== */
+    :root {
+        --ouro: #F2A104;
+        --ouro-escuro: #D97904;
+        --preto: #1A1A1A;
+        --cinza-claro: #F5F5F5;
+        --branco: #FFFFFF;
+    }
+
+    /* ==========================================
+       RESET E ESTILOS GLOBAIS
+       ========================================== */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+        background-color: var(--cinza-claro);
+        color: var(--preto);
+        line-height: 1.6;
+        padding-top: 75px; /* Evita que o menu fixo cubra o conteúdo */
+    }
+
+    /* ==========================================
+       MENU DE NAVEGAÇÃO (COMPARTILHADO)
+       ========================================== */
+    header {
+        background-color: var(--preto);
+        padding: 20px;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 3px solid var(--ouro);
+    }
+
+    .logo {
+        color: var(--ouro);
+        font-size: 24px;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+
+    nav a {
+        color: var(--branco);
+        text-decoration: none;
+        margin-left: 20px;
+        font-weight: 600;
+        transition: color 0.3s;
+    }
+
+    nav a:hover, nav a.active {
+        color: var(--ouro);
+    }
+
+    /* ==========================================
+       PÁGINA INICIAL: BANNER HERO E SOBRE
+       ========================================== */
+    .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+        url('img/comet02.jpeg') no-repeat center center/cover;
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: var(--branco);
+        padding: 20px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+        color: var(--ouro);
+    }
+
+    .hero p {
+        font-size: 20px;
+        max-width: 600px;
+        margin-bottom: 30px;
+    }
+
+    .btn {
+        background-color: var(--ouro);
+        color: var(--preto);
+        padding: 12px 30px;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+        text-transform: uppercase;
+        transition: background 0.3s, color 0.3s;
+    }
+
+    .btn:hover {
+        background-color: var(--ouro-escuro);
+        color: var(--branco);
+    }
+
+    .sobre {
+        max-width: 800px;
+        margin: 60px auto;
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    .sobre h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    /* ==========================================
+       PÁGINA DE PRODUTOS: GRID DE CERVEJAS
+       ========================================== */
+    .produtos {
+        padding: 40px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .produtos h1 {
+        font-size: 36px;
+        margin-bottom: 40px;
+    }
+
+    .grid-produtos {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+    }
+
+    .card {
+        background-color: var(--branco);
+        padding: 25px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        transition: transform 0.3s;
+        text-align: left;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+    .icon-beer {
+        font-size: 40px;
+        margin-bottom: 10px;
+        text-align: center;
+        display: block;
+    }
+
+    .card h3 {
+        color: var(--ouro-escuro);
+        margin-bottom: 10px;
+    }
+
+    .specs {
+        margin-top: 15px;
+        font-weight: bold;
+        color: var(--ouro-escuro);
+    }
+
+    /* ==========================================
+       PÁGINA DE CONTATO: FORMULÁRIO
+       ========================================== */
+    .contato-container {
+        max-width: 500px;
+        margin: 40px auto;
+        background: var(--branco);
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .contato-container h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 600;
+    }
+
+    .form-group input, 
+    .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+
+    .form-group input:focus, 
+    .form-group textarea:focus {
+        border-color: var(--ouro);
+        outline: none;
+    }
+
+    .btn-enviar {
+        width: 100%;
+        background-color: var(--ouro);
+        color: var(--preto);
+        border: none;
+        padding: 12px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 4px;
+        cursor: pointer;
+        text-transform: uppercase;
+        transition: background 0.3s, color 0.3s;
+    }
+
+    .btn-enviar:hover {
+        background-color: var(--ouro-escuro);
+        color: var(--branco);
+    }
+
+    /* ==========================================
+       RODAPÉ (COMPARTILHADO)
+       ========================================== */
+    footer {
+        background-color: var(--preto);
+        color: var(--branco);
+        text-align: center;
+        padding: 20px;
+        border-top: 3px solid var(--ouro);
+        margin-top: 60px;
+    }
+
+    /* ==========================================
+       RESPONSIVIDADE (CELULARES)
+       ========================================== */
+    @media (max-width: 600px) {
+        body { padding-top: 110px; }
+        .hero h1 { font-size: 32px; }
+        header { flex-direction: column; gap: 10px; }
+        nav a { margin: 0 10px; }
+    }
+    /* Botão Flutuante do WhatsApp */
+    .whatsapp-float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 20px;
+        right: 20px;
+        background-color: #25D366;
+        color: #FFF;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        transition: transform 0.3s, background-color 0.3s;
+    }
+
+    /* Efeito ao passar o mouse (Hover) */
+    .whatsapp-float:hover {
+        background-color: #128C7E;
+        transform: scale(1.1);
+    }
+
+    /* Ajuste para telas menores não cobrirem conteúdos importantes */
+    @media (max-width: 600px) {
+        .whatsapp-float {
+            width: 50px;
+            height: 50px;
+            bottom: 15px;
+            right: 15px;
+            font-size: 24px;
+        }
+    }
+    /* Janela de Barreira de Idade (+18) */
+    .modal-idade {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(26, 26, 26, 0.98); /* Fundo preto quase opaco */
+        z-index: 9999; /* Fica acima de tudo, inclusive do menu e do WhatsApp */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .modal-conteudo {
+        background-color: var(--branco);
+        padding: 40px;
+        border-radius: 12px;
+        text-align: center;
+        max-width: 450px;
+        width: 90%;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        border-top: 5px solid var(--ouro);
+    }
+
+    .modal-conteudo h2 {
+        font-size: 28px;
+        margin-bottom: 15px;
+        color: var(--preto);
+    }
+
+    .modal-conteudo p {
+        font-size: 16px;
+        margin-bottom: 30px;
+        color: #555;
+    }
+
+    .botoes-idade {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .btn-sim, .btn-nao {
+        padding: 12px 35px;
+        font-size: 16px;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-transform: uppercase;
+        transition: background 0.3s, transform 0.2s;
+    }
+
+    .btn-sim {
+        background-color: var(--ouro);
+        color: var(--preto);
+    }
+
+    .btn-sim:hover {
+        background-color: var(--ouro-escuro);
+        color: var(--branco);
+        transform: scale(1.05);
+    }
+
+    .btn-nao {
+        background-color: #E74C3C;
+        color: var(--branco);
+    }
+
+    .btn-nao:hover {
+        background-color: #C0392B;
+        transform: scale(1.05);
+    }
